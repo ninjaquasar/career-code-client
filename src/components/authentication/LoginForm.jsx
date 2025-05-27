@@ -1,6 +1,28 @@
+import { useNavigate } from "react-router";
+import useAuth from "../../hooks/useAuth";
+
 const LoginForm = () => {
+	const { loginWithEmailAndPassword } = useAuth();
+	const navigate = useNavigate();
+	const handleLogin = (event) => {
+		event.preventDefault();
+		const form = event.target;
+		const formData = new FormData(form);
+		const data = Object.fromEntries(formData.entries());
+		loginWithEmailAndPassword(data.email, data.password)
+			.then((userCredential) => {
+				console.log("Success - Login User");
+				navigate("/");
+			})
+			.catch((error) => {
+				console.log(`Error - Login User ${error}`);
+			});
+	};
 	return (
-		<form className="max-w-4/5 mx-auto space-y-4">
+		<form
+			className="max-w-4/5 mx-auto space-y-4"
+			onSubmit={handleLogin}
+		>
 			<label className="flex flex-col gap-y-1">
 				<span className="text-xl font-medium">Email</span>
 				<input
