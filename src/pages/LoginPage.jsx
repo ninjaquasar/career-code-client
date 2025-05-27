@@ -5,16 +5,16 @@ import Lottie from "lottie-react";
 const LoginPage = () => {
 	return (
 		<main className="px-40">
-			<div
-				role="grid"
-				className="flex flex-col items-center"
-			>
+			{/* Flexbox directed by column */}
+			<div className="flex flex-col items-center">
+				{/* Lottie animation on top */}
 				<div>
 					<Lottie
 						animationData={LoginLottie}
 						className="w-sm"
 					/>
 				</div>
+				{/* Login Card below */}
 				<LoginCard />
 			</div>
 		</main>

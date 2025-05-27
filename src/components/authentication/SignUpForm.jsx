@@ -2,18 +2,25 @@ import { useNavigate } from "react-router";
 import useAuth from "../../hooks/useAuth";
 
 const SignUpForm = () => {
+	// Get sign-up function from our custom hook for auth
 	const { signUpWithEmailAndPassword } = useAuth();
 	const navigate = useNavigate();
+	// Handle function that runs on submitting the form
 	const handleSignUp = (event) => {
+		// Prevent page from reloading
 		event.preventDefault();
+		// Get user submitted data
 		const form = event.target;
 		const formData = new FormData(form);
 		const data = Object.fromEntries(formData.entries());
+		// Sign up the user to Firebase
 		signUpWithEmailAndPassword(data.email, data.password)
+			// Action on success
 			.then((userCredential) => {
 				console.log("Success - Sign Up User");
 				navigate("/login");
 			})
+			// Action on error
 			.catch((error) => {
 				console.log(`Error - Sign Up User ${error}`);
 			});
@@ -23,6 +30,7 @@ const SignUpForm = () => {
 			className="max-w-4/5 mx-auto space-y-4"
 			onSubmit={handleSignUp}
 		>
+			{/* Name field */}
 			<label className="flex flex-col gap-y-1">
 				<span className="text-xl font-medium">Name</span>
 				<input
@@ -32,6 +40,7 @@ const SignUpForm = () => {
 					placeholder="Career Craft"
 				/>
 			</label>
+			{/* Picture field */}
 			<label className="flex flex-col gap-y-1">
 				<span className="text-xl font-medium">Picture (URL)</span>
 				<input
@@ -41,6 +50,7 @@ const SignUpForm = () => {
 					placeholder="https://i.ibb.co/id/name.jpg"
 				/>
 			</label>
+			{/* Email field */}
 			<label className="flex flex-col gap-y-1">
 				<span className="text-xl font-medium">Email</span>
 				<input
@@ -50,6 +60,7 @@ const SignUpForm = () => {
 					placeholder="name@example.com"
 				/>
 			</label>
+			{/* Password field */}
 			<label className="flex flex-col gap-y-1">
 				<span className="text-xl font-medium">Password</span>
 				<input
@@ -59,6 +70,7 @@ const SignUpForm = () => {
 					placeholder="••••••••"
 				/>
 			</label>
+			{/* Submit button */}
 			<div className="text-center">
 				<button
 					type="submit"

@@ -2,18 +2,25 @@ import { useNavigate } from "react-router";
 import useAuth from "../../hooks/useAuth";
 
 const LoginForm = () => {
+	// Get login function from our custom hook for auth
 	const { loginWithEmailAndPassword } = useAuth();
 	const navigate = useNavigate();
+	// Handle function that runs on submitting the form
 	const handleLogin = (event) => {
+		// Prevent page from reloading
 		event.preventDefault();
+		// Get user submitted data
 		const form = event.target;
 		const formData = new FormData(form);
 		const data = Object.fromEntries(formData.entries());
+		// Login the user to Firebase
 		loginWithEmailAndPassword(data.email, data.password)
+			// Action on success
 			.then((userCredential) => {
 				console.log("Success - Login User");
 				navigate("/");
 			})
+			// Action on error
 			.catch((error) => {
 				console.log(`Error - Login User ${error}`);
 			});
@@ -23,6 +30,7 @@ const LoginForm = () => {
 			className="max-w-4/5 mx-auto space-y-4"
 			onSubmit={handleLogin}
 		>
+			{/* Email field */}
 			<label className="flex flex-col gap-y-1">
 				<span className="text-xl font-medium">Email</span>
 				<input
@@ -32,6 +40,7 @@ const LoginForm = () => {
 					placeholder="name@example.com"
 				/>
 			</label>
+			{/* Password field */}
 			<label className="flex flex-col gap-y-1">
 				<span className="text-xl font-medium">Password</span>
 				<input
@@ -41,6 +50,7 @@ const LoginForm = () => {
 					placeholder="••••••••"
 				/>
 			</label>
+			{/* Submit button */}
 			<div className="text-center">
 				<button
 					type="submit"
