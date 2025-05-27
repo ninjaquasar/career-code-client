@@ -1,6 +1,28 @@
+import { useNavigate } from "react-router";
+import useAuth from "../../hooks/useAuth";
+
 const SignUpForm = () => {
+	const { signUpWithEmailAndPassword } = useAuth();
+	const navigate = useNavigate();
+	const handleSignUp = (event) => {
+		event.preventDefault();
+		const form = event.target;
+		const formData = new FormData(form);
+		const data = Object.fromEntries(formData.entries());
+		signUpWithEmailAndPassword(data.email, data.password)
+			.then((userCredential) => {
+				console.log("Success - Sign Up User");
+				navigate("/login");
+			})
+			.catch((error) => {
+				console.log(`Error - Sign Up User ${error}`);
+			});
+	};
 	return (
-		<form className="max-w-4/5 mx-auto space-y-4">
+		<form
+			className="max-w-4/5 mx-auto space-y-4"
+			onSubmit={handleSignUp}
+		>
 			<label className="flex flex-col gap-y-1">
 				<span className="text-xl font-medium">Name</span>
 				<input

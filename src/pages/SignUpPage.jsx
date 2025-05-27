@@ -4,7 +4,7 @@ import Lottie from "lottie-react";
 
 const SignUpPage = () => {
 	return (
-		<main className="px-40 py-20">
+		<main className="px-40 py-16">
 			<div
 				role="grid"
 				className="flex justify-around"
