@@ -1,5 +1,6 @@
 import { Link } from "react-router";
 import SignUpForm from "./SignUpForm";
+import GoogleLogin from "./GoogleLogin";
 
 const SignUpCard = () => {
 	return (
@@ -8,6 +9,8 @@ const SignUpCard = () => {
 			<h2 className="text-4xl font-bold text-center text-prime mb-10">Sign Up</h2>
 			{/* Form for signing up */}
 			<SignUpForm />
+			{/* Google Login */}
+			<GoogleLogin />
 			{/* Link to redirect the user to Login page */}
 			<p className="text-neutral-700 mt-8 text-center">
 				Already have experience here? Then{" "}
