@@ -1,8 +1,8 @@
-import SignUpCard from "../components/authentication/SignUpCard";
-import SignUpLottie from "../assets/lotties/sign_up.json";
+import LoginCard from "../components/authentication/LoginCard";
+import LoginLottie from "../assets/lotties/login.json";
 import Lottie from "lottie-react";
 
-const SignUpPage = () => {
+const LoginPage = () => {
 	return (
 		<main className="px-40">
 			<div
@@ -11,14 +11,14 @@ const SignUpPage = () => {
 			>
 				<div>
 					<Lottie
-						animationData={SignUpLottie}
+						animationData={LoginLottie}
 						className="w-sm"
 					/>
 				</div>
-				<SignUpCard />
+				<LoginCard />
 			</div>
 		</main>
 	);
 };
 
-export default SignUpPage;
+export default LoginPage;
