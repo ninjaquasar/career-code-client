@@ -27,7 +27,7 @@ const Navbar = () => {
 					to="/jobs"
 					className="px-4 py-2 rounded-lg hover:bg-neutral-200/80 transition-colors"
 				>
-					All Jobs
+					Browse Jobs
 				</NavLink>
 				<NavLink
 					to="/craft-job"

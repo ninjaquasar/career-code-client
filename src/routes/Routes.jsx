@@ -3,6 +3,7 @@ import RootLayout from "../layouts/RootLayout";
 import Home from "../pages/Home";
 import SignUpPage from "../pages/SignUpPage";
 import LoginPage from "../pages/LoginPage";
+import BrowseJobs from "../pages/BrowseJobs";
 
 const router = createBrowserRouter([
 	{
@@ -20,6 +21,11 @@ const router = createBrowserRouter([
 			{
 				path: "/login",
 				Component: LoginPage,
+			},
+			{
+				path: "/jobs",
+				Component: BrowseJobs,
+				loader: () => fetch("http://localhost:5100/jobs"),
 			},
 		],
 	},

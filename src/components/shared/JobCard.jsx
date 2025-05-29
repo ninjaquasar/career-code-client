@@ -36,22 +36,25 @@ const JobCard = ({ data }) => {
 				<p className="text-neutral-700 text-justify line-clamp-3">{description}</p>
 				<ul className="text-neutral-700 list-disc pl-4">
 					{responsibilities.map((responsibility) => (
-						<li>{responsibility}</li>
+						<li key={responsibility}>{responsibility}</li>
 					))}
 				</ul>
 			</div>
 			<p className="font-medium">
-				{salaryRange.min} - {salaryRange.max} {salaryRange.currency.toUpperCase()}
+				{salaryRange.min} - {salaryRange.max} {salaryRange.currency}
 			</p>
 			<div className="flex flex-wrap gap-2 text-sm">
 				{requirements.map((requirement) => (
-					<span className="px-2 py-1 bg-neutral-100 border border-neutral-300 hover:border-neutral-400 rounded-md cursor-default">
+					<span
+						key={requirement}
+						className="px-2 py-1 bg-neutral-100 border border-neutral-300 hover:border-neutral-400 rounded-md cursor-default"
+					>
 						{requirement}
 					</span>
 				))}
 			</div>
 			<Link
-				to={`/jobs/details/${"id"}`}
+				to={`/jobs/details/${_id}`}
 				className="self-end mt-auto"
 			>
 				<button
