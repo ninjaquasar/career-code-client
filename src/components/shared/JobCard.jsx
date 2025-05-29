@@ -55,6 +55,7 @@ const JobCard = ({ data }) => {
 			</div>
 			<Link
 				to={`/jobs/details/${_id}`}
+				target="_blank"
 				className="self-end mt-auto"
 			>
 				<button
