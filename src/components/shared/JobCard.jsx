@@ -1,3 +1,4 @@
+import { CircleDollarSignIcon, MapPinnedIcon, TagIcon } from "lucide-react";
 import { Link } from "react-router";
 
 const JobCard = ({ data }) => {
@@ -29,8 +30,14 @@ const JobCard = ({ data }) => {
 			</div>
 			<h5 className="text-xl font-bold">{title}</h5>
 			<div className="flex justify-between text-sm text-neutral-700 font-medium">
-				<span>{category}</span>
-				<span>{location}</span>
+				<div className="flex items-center gap-x-1">
+					<TagIcon size={16} />
+					{category}
+				</div>
+				<div className="flex items-center gap-x-1">
+					<MapPinnedIcon size={16} />
+					{location}
+				</div>
 			</div>
 			<div className="space-y-1">
 				<p className="text-neutral-700 text-justify line-clamp-3">{description}</p>
@@ -40,9 +47,12 @@ const JobCard = ({ data }) => {
 					))}
 				</ul>
 			</div>
-			<p className="font-medium">
-				{salaryRange.min} - {salaryRange.max} {salaryRange.currency}
-			</p>
+			<div className="flex items-center gap-x-2">
+				<CircleDollarSignIcon size={20} />
+				<p className="font-medium">
+					{salaryRange.min} - {salaryRange.max} {salaryRange.currency}
+				</p>
+			</div>
 			<div className="flex flex-wrap gap-2 text-sm">
 				{requirements.map((requirement) => (
 					<span

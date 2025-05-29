@@ -1,3 +1,11 @@
+import {
+	BriefcaseBusinessIcon,
+	CalendarXIcon,
+	CircleDollarSignIcon,
+	MapPinnedIcon,
+	TagIcon,
+} from "lucide-react";
+
 const JobDetailsCard = ({ data }) => {
 	const {
 		company_logo,
@@ -29,9 +37,27 @@ const JobDetailsCard = ({ data }) => {
 			</div>
 			<div className="border border-neutral-200" />
 			<div className="flex gap-x-20 font-medium text-neutral-600">
-				<p>{category}</p>
-				<p>{jobType}</p>
-				<p>{location}</p>
+				<p className="flex items-center gap-x-2">
+					<TagIcon
+						size={16}
+						className="stroke-neutral-700"
+					/>
+					{category}
+				</p>
+				<p className="flex items-center gap-x-2">
+					<BriefcaseBusinessIcon
+						size={16}
+						className="stroke-neutral-700"
+					/>
+					{jobType}
+				</p>
+				<p className="flex items-center gap-x-2">
+					<MapPinnedIcon
+						size={16}
+						className="stroke-neutral-700"
+					/>
+					{location}
+				</p>
 			</div>
 			<div className="border border-neutral-200" />
 			<div className="max-w-5/6 space-y-1">
@@ -62,10 +88,14 @@ const JobDetailsCard = ({ data }) => {
 			</div>
 			<div className="border border-neutral-200" />
 			<div className="flex items-center gap-x-32 text-neutral-700 text-lg font-medium">
-				<h6>
+				<h6 className="flex items-center gap-x-2">
+					<CircleDollarSignIcon size={24} />
 					{salaryRange.min} - {salaryRange.max} ({salaryRange.currency})
 				</h6>
-				<h6>{applicationDeadline}</h6>
+				<h6 className="flex items-center gap-x-2">
+					<CalendarXIcon size={24} />
+					{applicationDeadline}
+				</h6>
 			</div>
 			<div className="border border-neutral-200" />
 			<div className="space-y-2">
