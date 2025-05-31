@@ -1,4 +1,4 @@
-import BrowseCategories from "../components/home/BrowseCategories";
+import HotCategories from "../components/home/HotCategories";
 import Hero from "../components/home/Hero";
 import HotJobs from "../components/home/HotJobs";
 import Stats from "../components/home/Stats";
@@ -8,7 +8,7 @@ const Home = () => {
 		<main className="pb-24">
 			<Hero />
 			<Stats />
-			<BrowseCategories />
+			<HotCategories />
 			<HotJobs />
 		</main>
 	);

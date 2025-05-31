@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import CategoryCard from "../shared/CategoryCard";
 import { Link } from "react-router";
 
-const BrowseCategories = () => {
+const HotCategories = () => {
 	const [categories, setCategories] = useState();
 	useEffect(() => {
 		fetch("http://localhost:5100/categories/hot")
@@ -12,7 +12,7 @@ const BrowseCategories = () => {
 	}, []);
 	return (
 		<section className="max-w-8xl mx-auto mt-24">
-			<h2 className="text-4xl font-bold text-center mb-2">Browse Categories</h2>
+			<h2 className="text-4xl font-bold text-center mb-2">Hot Categories</h2>
 			<p className="text-lg text-center text-neutral-700">
 				Find the job that's perfect for you, categorized beautifully for you. Over 15+
 				categories.
@@ -29,7 +29,10 @@ const BrowseCategories = () => {
 				))}
 			</div>
 			<div className="text-center">
-				<Link to="/categories">
+				<Link
+					to="/categories"
+					target="_blank"
+				>
 					<button
 						type="submit"
 						className="w-40 py-2 text-2xl font-medium bg-prime text-light hover:bg-blue-500 rounded-xl cursor-pointer"
@@ -42,4 +45,4 @@ const BrowseCategories = () => {
 	);
 };
 
-export default BrowseCategories;
+export default HotCategories;

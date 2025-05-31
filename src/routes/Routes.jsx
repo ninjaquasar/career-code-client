@@ -6,6 +6,7 @@ import LoginPage from "../pages/LoginPage";
 import BrowseJobs from "../pages/BrowseJobs";
 import JobDetails from "../pages/JobDetails";
 import CraftJob from "../pages/CraftJob";
+import BrowseCategories from "../pages/BrowseCategories";
 
 const router = createBrowserRouter([
 	{
@@ -23,6 +24,11 @@ const router = createBrowserRouter([
 			{
 				path: "/login",
 				Component: LoginPage,
+			},
+			{
+				path: "/categories",
+				Component: BrowseCategories,
+				loader: () => fetch("http://localhost:5100/categories"),
 			},
 			{
 				path: "/jobs",
