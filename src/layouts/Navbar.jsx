@@ -30,7 +30,7 @@ const Navbar = () => {
 					Browse Jobs
 				</NavLink>
 				<NavLink
-					to="/craft-job"
+					to="/jobs/craft"
 					className="px-4 py-2 rounded-lg hover:bg-neutral-200/80 transition-colors"
 				>
 					Craft Job

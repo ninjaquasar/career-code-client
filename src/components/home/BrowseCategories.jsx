@@ -1,4 +1,4 @@
-import CategoryCard from "./CategoryCard";
+import CategoryCard from "../shared/CategoryCard";
 
 const BrowseCategories = () => {
 	const categoriesData = [
@@ -42,7 +42,7 @@ const BrowseCategories = () => {
 				Find the job that's perfect for you, categorized beautifully for you. Over 15+
 				categories.
 			</p>
-			<div className="mt-12 grid grid-cols-5 gap-6">
+			<div className="mt-12 grid grid-cols-4 gap-6">
 				{categoriesData.map((category) => (
 					<CategoryCard
 						key={category.name}

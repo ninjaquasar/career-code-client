@@ -1,4 +1,4 @@
-import JobDetailsCard from "../components/shared/JobDetailsCard";
+import JobDetailsCard from "../components/cards/JobDetailsCard";
 import { useLoaderData } from "react-router";
 
 const JobDetails = () => {
