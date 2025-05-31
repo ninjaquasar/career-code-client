@@ -1,4 +1,5 @@
 const CraftJobForm = () => {
+	// Arrays of multi-choice field's data
 	const categories = [
 		"Executive",
 		"Business",
@@ -7,6 +8,8 @@ const CraftJobForm = () => {
 		"Finance",
 		"Development",
 		"Design",
+		"Data Science",
+		"AI/ML",
 		"Teaching",
 		"Marketing",
 		"Sales",
@@ -35,6 +38,7 @@ const CraftJobForm = () => {
 		"C++",
 		"Python",
 		"Django",
+		"React Native",
 		"SQL",
 		"SEO",
 		"Google Analytics",
@@ -63,8 +67,18 @@ const CraftJobForm = () => {
 		"Agile Methods",
 	];
 	const currencies = ["USD", "GBP", "BDT", "EUR", "JPY"];
+	// Handle for Craft (Submit)
+	const handleCraft = (event) => {
+		event.preventDefault();
+		const form = event.target;
+		const formData = new FormData(form);
+		const data = Object.fromEntries(formData.entries());
+	};
 	return (
-		<form className="max-w-4/5 mx-auto space-y-4">
+		<form
+			className="max-w-4/5 mx-auto space-y-4"
+			onSubmit={handleCraft}
+		>
 			{/* Title field */}
 			<label className="flex flex-col gap-y-1">
 				<span className="text-xl font-medium">Title</span>
@@ -193,6 +207,7 @@ const CraftJobForm = () => {
 						>
 							<input
 								type="checkbox"
+								name="requirements"
 								className="checkbox checkbox-sm rounded bg-[#e9e9e9] checked:bg-[#bbbbbb]"
 							/>
 							{requirement}
