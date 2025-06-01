@@ -35,9 +35,19 @@ const SignUpForm = () => {
 				<span className="text-xl font-medium">Full Name</span>
 				<input
 					type="text"
-					name="name"
+					name="full_name"
 					className="p-2 text-lg bg-neutral-50 border border-neutral-300 rounded-lg  focus:outline-none focus:border-prime/50 placeholder:text-neutral-400 caret-prime"
 					placeholder="Steve Potter"
+				/>
+			</label>
+			{/* Photo field */}
+			<label className="flex flex-col gap-y-1">
+				<span className="text-xl font-medium">Profile Photo</span>
+				<input
+					type="url"
+					name="photo_url"
+					className="p-2 text-lg bg-neutral-50 border border-neutral-300 rounded-lg  focus:outline-none focus:border-prime/50 placeholder:text-neutral-400 caret-prime"
+					placeholder="https://i.ibb.co/id/name.jpg"
 				/>
 			</label>
 			{/* Email field */}

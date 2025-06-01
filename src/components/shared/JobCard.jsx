@@ -63,18 +63,30 @@ const JobCard = ({ data }) => {
 					</span>
 				))}
 			</div>
-			<Link
-				to={`/jobs/details/${_id}`}
-				target="_blank"
-				className="self-end mt-auto"
-			>
-				<button
-					type="button"
-					className="px-3 py-2 text-lg font-medium text-light bg-prime rounded-lg hover:bg-blue-500 cursor-pointer"
+			<div className="flex justify-between mt-auto">
+				<Link
+					to={`/jobs/details/${_id}`}
+					target="_blank"
 				>
-					Apply Now
-				</button>
-			</Link>
+					<button
+						type="button"
+						className="px-3 py-2 font-medium text-light bg-prime rounded-lg hover:bg-blue-500 cursor-pointer"
+					>
+						View More
+					</button>
+				</Link>
+				<Link
+					to={`/applications/apply/${_id}`}
+					target="_blank"
+				>
+					<button
+						type="button"
+						className="px-3 py-2 font-medium text-light bg-prime rounded-lg hover:bg-blue-500 cursor-pointer"
+					>
+						Apply Now
+					</button>
+				</Link>
+			</div>
 		</div>
 	);
 };
